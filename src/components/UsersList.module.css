@@ -1,0 +1,58 @@
+.users {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: users-appear 1s ease-out forwards;
+}
+
+.users__button{
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #262421;
+}
+
+
+.users__label{
+  display: flex;
+}
+.users__label h1{
+  padding-left: 6rem;
+}
+.users__header{
+  display: flex;
+  justify-content: space-around;
+}
+
+.users__header_player{
+  width: 6rem;
+  text-align: left;
+}
+
+.users__header_rating{
+  width: 3rem;
+  text-align: center;
+}
+
+.users__header_game_count{
+  width: 1rem;
+  text-align: center;
+}
+
+.users ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes users-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

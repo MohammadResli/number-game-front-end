@@ -1,19 +1,11 @@
 
-import {Link, useLoaderData} from 'react-router-dom';
+import {useLoaderData} from 'react-router-dom';
+import UsersList from '../components/UsersList';
 
 const UsersPage = () => {
     const userData = useLoaderData();
     return (
-        <>
-        <h1>Users Page.</h1>
-        <ul>
-            {userData.map(user => 
-                <li key={user.user_name}>
-                    <Link to={`/users/${user.user_name}`}>{user.user_name}</Link>
-                </li>
-            )}
-        </ul>
-        </>
+        <UsersList users={userData}/>
     );
 }
 
