@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
@@ -6,10 +6,47 @@ const MainNavigation = () => {
         <header className={classes.header}>
             <nav>
                 <ul className={classes.list}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/arena">Arena</Link></li>
-                    <li><Link to="/games">Games</Link></li>
-                    <li><Link to="/users">Users</Link></li>
+                    <li>
+                        <NavLink 
+                        to="/" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        end
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                        to="/arena" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        >
+                            Arena
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                        to="/games" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        >
+                            Games
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                        to="/users" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        >
+                            Users
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>
