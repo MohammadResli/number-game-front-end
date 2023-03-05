@@ -1,5 +1,5 @@
 
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 
 
 const UserDetailPage = () => {
@@ -10,6 +10,7 @@ const UserDetailPage = () => {
         <>
             <h3>User Detail.</h3>
             <p>Welcome {params.userName}</p>
+            <p><Link to='..' relative='path'>Back</Link></p>
         </>
     );
 
