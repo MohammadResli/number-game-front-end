@@ -4,14 +4,14 @@ import ErrorPage from './pages/Erorr';
 
 import GameArenaPage from './pages/GameArena';
 import GameDetailPage from './pages/GameDetail';
-import GamesPages from './pages/Games';
+import GamesPages, {GamesLoader} from './pages/Games';
 import HomePage from './pages/Home';
 import LoginPage from './pages/LogIn';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import SignUpPage from './pages/SignUp';
 import UserDetailPage from './pages/UserDetail';
-import UsersPage from './pages/Users';
+import UsersPage, {UsersLoader} from './pages/Users';
 
 
 const router = createBrowserRouter([
@@ -21,9 +21,9 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>,
         children: [
             { path: '/', element: <HomePage /> },
-            { path: '/games', element: <GamesPages /> },
+            { path: '/games', element: <GamesPages />, loader: GamesLoader},
             { path: '/games/:gameId', element: <GameDetailPage/> },
-            { path: '/users', element: <UsersPage /> },
+            { path: '/users', element: <UsersPage />,loader: UsersLoader },
             { path: '/users/:userName', element: <UserDetailPage/> },
             { path: '/login', element: <LoginPage /> },
             { path: '/signup', element: <SignUpPage /> },
