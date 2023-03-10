@@ -1,0 +1,25 @@
+.game_item{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #6b6464;
+    background-color: #323131;
+}
+
+.game_item__user_name{
+    width: 6rem;
+    text-align: left;
+}
+
+.game_item__state{
+    width: 3rem;
+    text-align: center;
+}
+
+.game_item__game_id{
+    width: 1rem;
+    text-align: center;
+}
+
+.game_item:hover{
+    background-color: #23272f;
+}
