@@ -1,6 +1,10 @@
+import LogInForm from "../components/LogInForm";
+
 
 const LoginPage = () => {
-    return <h2>Login Page</h2>;
+    return (
+        <LogInForm/>
+        );
 }
 
 export default LoginPage;

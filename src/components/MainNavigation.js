@@ -49,6 +49,29 @@ const MainNavigation = () => {
                     </li>
                 </ul>
             </nav>
+            <ul className={classes.list}> 
+                <li>
+                <NavLink 
+                        to="/login" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        >
+                            SIGN IN
+                        </NavLink>
+                </li>
+                <li>
+                <NavLink 
+                        to="/signup" 
+                        className={({isActive}) =>
+                            isActive ? classes.active: undefined
+                        }
+                        >
+                            SIGN UP
+                        </NavLink>
+                </li>
+            </ul>
+            
         </header>
     );
 }
