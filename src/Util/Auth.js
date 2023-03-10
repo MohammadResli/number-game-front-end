@@ -1,6 +1,6 @@
 
 
-const getAuthToken = () => {
+export const getAuthToken = () => {
     const token = localStorage.getItem('token');
     return token;
 };
@@ -10,4 +10,7 @@ export const getAuthUser = () => {
     return user;
 }
 
-export default getAuthToken;
+const TokenLoader = () => {
+    return getAuthToken();
+}
+export default TokenLoader;

@@ -1,10 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Form, useRouteLoaderData } from 'react-router-dom';
 import getAuthToken, {getAuthUser} from '../Util/Auth';
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
-    
-    const token = getAuthToken();
+    const token = useRouteLoaderData('root');
     let authHeader = 
     <ul className={classes.list}> 
         <li>
@@ -34,6 +33,11 @@ const MainNavigation = () => {
                     isActive ? classes.active: undefined
                 }
                 >{getAuthUser()}</NavLink>
+            </li>
+            <li>
+                <Form action='/logout' method='post'>
+                    <button>Logout</button>
+                </Form>
             </li>
         </ul>;
     }
