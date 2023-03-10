@@ -9,7 +9,7 @@ import HomePage from './pages/Home';
 import LoginPage ,{LoginAction} from './pages/LogIn';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
-import SignUpPage from './pages/SignUp';
+import SignUpPage ,{SignUpAction}from './pages/SignUp';
 import UserDetailPage, {UserDetailLoader} from './pages/UserDetail';
 import UsersPage, {UsersLoader} from './pages/Users';
 
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             { path: '/users', element: <UsersPage />,loader: UsersLoader },
             { path: '/users/:userName', element: <UserDetailPage/>,loader:UserDetailLoader},
             { path: '/login', element: <LoginPage /> ,action: LoginAction},
-            { path: '/signup', element: <SignUpPage /> },
+            { path: '/signup', element: <SignUpPage />, action: SignUpAction },
             { path: '/profile', element: <ProfilePage /> },
             { path: '/arena', element: <GameArenaPage /> },
         ],
