@@ -1,7 +1,43 @@
 import { NavLink } from 'react-router-dom';
+import getAuthToken, {getAuthUser} from '../Util/Auth';
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
+    
+    const token = getAuthToken();
+    let authHeader = 
+    <ul className={classes.list}> 
+        <li>
+            <NavLink 
+                to="/login" 
+                className={({isActive}) =>
+                    isActive ? classes.active: undefined
+                }
+            >SIGN IN</NavLink>
+        </li>
+        <li>
+            <NavLink 
+                to="/signup" 
+                className={({isActive}) =>
+                    isActive ? classes.active: undefined
+                }
+                >SIGN UP</NavLink>
+        </li>
+    </ul>;
+    if(token){
+        authHeader = 
+        <ul className={classes.list}> 
+            <li>
+            <NavLink
+                to="/profile" 
+                className={({isActive}) =>
+                    isActive ? classes.active: undefined
+                }
+                >{getAuthUser()}</NavLink>
+            </li>
+        </ul>;
+    }
+
     return (
         <header className={classes.header}>
             <nav>
@@ -49,29 +85,7 @@ const MainNavigation = () => {
                     </li>
                 </ul>
             </nav>
-            <ul className={classes.list}> 
-                <li>
-                <NavLink 
-                        to="/login" 
-                        className={({isActive}) =>
-                            isActive ? classes.active: undefined
-                        }
-                        >
-                            SIGN IN
-                        </NavLink>
-                </li>
-                <li>
-                <NavLink 
-                        to="/signup" 
-                        className={({isActive}) =>
-                            isActive ? classes.active: undefined
-                        }
-                        >
-                            SIGN UP
-                        </NavLink>
-                </li>
-            </ul>
-            
+            {authHeader}
         </header>
     );
 }
