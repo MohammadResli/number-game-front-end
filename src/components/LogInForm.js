@@ -12,7 +12,7 @@ const LogInForm = () => {
         </p>
         <p className={classes.form_group}>
           <label htmlFor="password" className={classes.form__label}>Password</label>
-          <input id="password" type="password" name="password" required />
+          <input id="password" type="password" name="password" autoComplete='off' required />
         </p>
         <div className={classes.actions}>
           <button>Sign in</button>

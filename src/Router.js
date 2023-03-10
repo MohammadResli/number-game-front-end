@@ -6,7 +6,7 @@ import GameArenaPage from './pages/GameArena';
 import GameDetailPage ,{GameDetailLoader} from './pages/GameDetail';
 import GamesPages, {GamesLoader} from './pages/Games';
 import HomePage from './pages/Home';
-import LoginPage from './pages/LogIn';
+import LoginPage ,{LoginAction} from './pages/LogIn';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import SignUpPage from './pages/SignUp';
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             { path: '/games/:gameId', element: <GameDetailPage/>, loader:GameDetailLoader },
             { path: '/users', element: <UsersPage />,loader: UsersLoader },
             { path: '/users/:userName', element: <UserDetailPage/>,loader:UserDetailLoader},
-            { path: '/login', element: <LoginPage /> },
+            { path: '/login', element: <LoginPage /> ,action: LoginAction},
             { path: '/signup', element: <SignUpPage /> },
             { path: '/profile', element: <ProfilePage /> },
             { path: '/arena', element: <GameArenaPage /> },
